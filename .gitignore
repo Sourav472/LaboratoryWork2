@@ -1,0 +1,18 @@
+
+# Build output
+bin/
+obj/
+.vs/
+
+# Local settings and secrets
+appsettings.Development.json
+appsettings.Local.json
+.env
+
+# Visual Studio publishing profiles and credentials
+Properties/PublishProfiles/*.pubxml
+Properties/PublishProfiles/*.publishsettings
+
+# User-specific files
+*.user
+*.suo

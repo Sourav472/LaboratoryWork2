@@ -1,0 +1,40 @@
+
+@page
+@model LaboratoryWork2.Pages.ProductPages.IndexModel
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>Products</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Product)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price.ToString("0.00")</td>
+                <td>
+                    <a asp-page="./Edit"
+                       asp-route-id="@item.ProductID">Edit</a> |
+                    <a asp-page="./Details"
+                       asp-route-id="@item.ProductID">Details</a> |
+                    <a asp-page="./Delete"
+                       asp-route-id="@item.ProductID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
